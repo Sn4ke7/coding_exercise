@@ -2,22 +2,25 @@ from tkinter import *
 from tkinter import ttk
 
 class Calculator:
-    print("Test")
+    calc_value = 0.0
+    div_trigger = False
+    mult_trigger = False
+    add_trigger = False
+    sub_trigger = False
 
-    # def __init__(self, root):
-    #     self.entry_value = StringVar(root, value="")
-    #     root = Tk()
-    #     root.geometry("1000x1000")
-    #     root.title("Calculator")
-    #     calc = Calculator(root)
-    #     root.mainloop()
-# TODO : Create and functionality for buttons
+    def button_press(self, value):
+        entry_val = self.number_entry.get()
+        entry_val += value
+        self.number_entry.delete(0,"end")
+        self.number_entrt.insert(0, entry_val)
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     calcGUI = Tk()
     calcGUI.geometry("500x500")
     calcGUI.title("Calc")
+    l1 = Label(calcGUI, text="Calculate:").pack()
+    entry1 = Entry(calcGUI).pack()
+    B = Button(calcGUI, text="Sum").pack()
     # mainloop at the end
     calcGUI.mainloop()
     pass
